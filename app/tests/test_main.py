@@ -4,20 +4,17 @@ from app.main import app
 
 client = TestClient(app)
 
-
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"Hello": "World1"}
 
-# def test_callname():
-#     name = "pajjaree1"
-#     response = client.get("/callname/{name}")
-#     assert response.status_code == 200
-#     assert response.json() == {"hello": name}
-
-# def test_callname_post():
-#     name = "pajjaree"
-#     response = client.post("/callname", data={"name": name})
-#     assert response.status_code == 200
-#     assert response.json() == {"callname": name}
+def test_callname():
+    response = client.get("/callname/john")
+    assert response.status_code == 200
+    assert response.json() == {"hello": "john"}
+    
+def test_callname():
+    response = client.post("/callname", data={"name": "john"})
+    assert response.status_code == 200
+    assert response.json() == {"hello": "john"}
