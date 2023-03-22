@@ -16,13 +16,13 @@ def test_read_main():
     assert response.json() == {"Hello": "World1"}
 
 def test_callname():
-    name = "Alice"
+    name = "pajjaree1"
     response = client.get(f"/callname/{name}")
     assert response.status_code == 200
     assert response.json() == {"hello": name}
 
 def test_callname():
-    name = "Hakim"
+    name = "pajjaree"
     response = client.post("/callname", json={"name": name})
     assert response.status_code == 200
     assert response.json() == {"hello": name}
