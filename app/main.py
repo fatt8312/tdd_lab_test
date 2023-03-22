@@ -20,7 +20,7 @@ def read_item(item_id: int, q: str = None):
 def call_name(name: str):
     return {"hello": name}
 
-@app.post("/callname/{name}")
+@app.route('/callname', methods=['POST'])
 def call_name(name: str):
     return {"hello": name}
 
