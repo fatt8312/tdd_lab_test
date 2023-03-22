@@ -12,9 +12,9 @@ def test_read_main():
 def test_callname():
     response = client.get("/callname/john")
     assert response.status_code == 200
-    assert response.json() == {"hello": "john"}
+    assert response.json() == {"hello": "pajjaree"}
     
 def test_callname():
     response = client.post("/callname", data={"name": "john"})
     assert response.status_code == 200
-    assert response.json() == {"hello": "john"}
+    assert response.json() == {"hello": "pajjaree"}
