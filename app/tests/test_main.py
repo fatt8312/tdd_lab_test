@@ -10,16 +10,11 @@ client = TestClient(app)
 #     assert response.status_code == 200
 #     assert response.json() == {"Hello": "World1"}
 
-# def test_read_main():
-#     response = client.get("/")
-#     assert response.status_code == 200
-#     assert response.json() == {"Hello": "World1"}
-
 def test_callname():
     name = "pajjaree1"
-    response = client.get(f"/callname/{name}")
+    response = client.get("/callname/{name}")
     assert response.status_code == 200
-    assert response.json() == {"callname": name}
+    assert response.json() == {"hello": name}
 
 # def test_callname_post():
 #     name = "pajjaree"
