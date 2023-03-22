@@ -16,8 +16,8 @@ def read_item(item_id: int, q: str = None):
 def read_name(name: str = None):
     return {"callname": name}
 
-@app.post("/callname/{name}")
-def call_name(name: str):
+@app.post("/callname")
+def read_name(name: str = Form(...)):
     return {"callname": name}
 
 handler = Mangum(app)
