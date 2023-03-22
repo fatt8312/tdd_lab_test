@@ -19,10 +19,10 @@ def test_callname():
     name = "pajjaree1"
     response = client.get(f"/callname/{name}")
     assert response.status_code == 200
-    assert response.json() == {"hello": name}
+    assert response.json() == {"callname": name}
 
 def test_callname():
     name = "pajjaree"
     response = client.post("/callname", json={"name": name})
     assert response.status_code == 200
-    assert response.json() == {"hello": name}
+    assert response.json() == {"callname": name}
