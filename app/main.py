@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"callname": "World1"}
+    return {"hello": "World1"}
 
 
 @app.get("/items/{item_id}")
@@ -14,7 +14,7 @@ def read_item(item_id: int, q: str = None):
 
 @app.get("/hello/{name}")
 def read_name(name: str = None):
-    return {"callname": name}
+    return {"hello": name}
 
 # @app.post("/callname")
 # def read_name(name: str = Form(...)):
